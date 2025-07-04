@@ -2,7 +2,7 @@ site_name: Infini-X Documentation
 
 theme:
   name: material
-  custom_dir: overrides # For custom CSS/JS or templates
+  #custom_dir: overrides # For custom CSS/JS or templates
   features:
     - navigation.tabs
     - navigation.sections
