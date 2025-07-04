@@ -1,0 +1,16 @@
+# Global commands and configuration variables for Infini-X OS
+
+[commands]
+# Example command definition:
+# update_system = "sudo pacman -Syu --noconfirm"
+# install_package = "sudo pacman -S --noconfirm {package_name}"
+
+[paths]
+# Example path definition:
+# dotfiles_repo = "https://github.com/Infini-X/dotfiles.git"
+# config_dir = "/etc/infini-x"
+
+[settings]
+# Example setting:
+# default_theme = "rose-pine"
+# enable_ai_assistant = true

@@ -1,0 +1,91 @@
+/* Waybar style for Infini-X OS */
+
+/* Colors (Rose Pine inspired) */
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color text #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color subtext1 #bac2de;
+@define-color overlay0 #6c7086;
+@define-color overlay1 #7f849c;
+@define-color overlay2 #9399b2;
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "FiraCode Nerd Font", "monospace";
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: @base;
+    color: @text;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: @overlay1;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active {
+    color: @mauve;
+    border-bottom: 2px solid @mauve;
+}
+
+#workspaces button:hover {
+    background-color: @surface0;
+}
+
+#window {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#tray {
+    padding: 0 10px;
+    background-color: @mantle;
+    margin: 0 4px;
+    border-radius: 8px;
+}
+
+#pulseaudio.muted {
+    color: @red;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+}

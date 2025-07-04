@@ -1,0 +1,10 @@
+[Unit]
+Description=Infini-X AI Daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/ai-daemon # Placeholder path
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

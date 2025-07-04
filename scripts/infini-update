@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# infini-update - Script to update Infini-X OS
+
+echo "Updating Infini-X OS..."
+
+# Update Arch Linux packages
+sudo pacman -Syu --noconfirm
+
+# Update AUR packages (if yay is installed)
+if command -v yay &> /dev/null
+then
+    echo "Updating AUR packages with yay..."
+    yay -Syu --noconfirm
+else
+    echo "yay not found. Skipping AUR package update."
+fi
+
+echo "Infini-X OS update complete."

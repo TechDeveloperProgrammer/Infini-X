@@ -1,0 +1,50 @@
+# Git Ignore for Infini-X OS Project
+
+# Binaries for programs
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Go binaries and packages
+*.test
+*.out
+/core/cmd/infini/infini
+/core/internal/infinid/infinid
+/core/internal/infini-sync/infini-sync
+
+# Build artifacts
+/release/
+/build-iso/work/
+/build-iso/out/
+/build-rom/*.img
+
+# Dependency directories
+/vendor/
+/node_modules/
+
+# Editor/IDE specific files
+.vscode/
+.idea/
+*.swp
+*.bak
+
+# OS generated files
+.DS_Store
+thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# AI models (large files, typically downloaded separately)
+/assistant/models/
+
+# Calamares cache
+/calamares-config/cache/
+
+# MkDocs build output
+/site/

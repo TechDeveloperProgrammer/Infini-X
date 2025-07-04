@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Placeholder for Android GSI manifest -->
+  <!-- This file would typically define the repositories and projects needed to build AOSP -->
+  <!-- For Infini-X, it might point to specific Arch Linux rootfs components or custom overlays -->
+
+  <remote name="aosp" fetch="https://android.googlesource.com/" />
+
+  <default revision="master" remote="aosp" sync-j="4" />
+
+  <!-- Example project (conceptual) -->
+  <!-- <project path="device/infini-x/common" name="device/common" remote="infini-x" /> -->
+
+</manifest>

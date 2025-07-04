@@ -1,0 +1,27 @@
+# Calamares branding description for Infini-X
+
+# This file defines the visual branding elements for the Calamares installer.
+# For more details, refer to the Calamares documentation.
+
+--- # YAML header
+
+productName: "Infini-X"
+version: "0.1.0"
+
+# Paths to branding assets (relative to this file)
+logo: "logo.png"
+sidebar: "sidebar.png"
+banner: "banner.png"
+
+# Stylesheet for the installer UI (QSS - Qt Style Sheet)
+stylesheet: "style.qss"
+
+# Custom strings used in the installer
+strings:
+    welcome: "Welcome to the Infini-X Installer"
+    finish: "Installation Complete!"
+    # Add more custom strings as needed
+
+# Colors (optional, can also be defined in stylesheet)
+# primaryColor: "#89b4fa" # Catppuccin Frappe Blue
+# accentColor: "#a6e3a1" # Catppuccin Frappe Green

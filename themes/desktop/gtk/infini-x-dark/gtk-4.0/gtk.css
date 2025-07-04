@@ -1,0 +1,25 @@
+
+/* GTK 4.0 CSS for Infini-X Dark Theme */
+
+@define-color base #1e1e2e;
+@define-color surface0 #313244;
+@define-color text #cdd6f4;
+@define-color blue #89b4fa;
+
+.background {
+    background-color: @base;
+}
+
+.label {
+    color: @text;
+}
+
+.button {
+    background-color: @blue;
+    color: @base;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: lighten(@blue, 10%);
+}

@@ -1,0 +1,75 @@
+# Waybar configuration for Infini-X OS
+
+# This file contains the main configuration for the Waybar status bar.
+# It is inspired by end-4/dots-hyprland and HyDE-Project/HyDE.
+
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "battery",
+        "tray"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
+    },
+
+    "hyprland/window": {
+        "format": "{title}"
+    },
+
+    "clock": {
+        "format": "{:%H:%M %a %d %b}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": " {ipaddr}/{interface}",
+        "format-disconnected": "⚠ Disconnected",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) - {ipaddr}",
+        "tooltip-format-ethernet": "{ifname} - {ipaddr}",
+        "on-click": "nm-connection-editor"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    }
+}

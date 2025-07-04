@@ -1,0 +1,24 @@
+
+# common.yaml - General shared configurations for Infini-X
+
+# Example: API endpoints
+api:
+  base_url: "http://localhost:8080/api/v1"
+  timeout_seconds: 30
+
+# Example: Feature flags
+features:
+  dark_mode: true
+  experimental_ai: false
+
+# Example: Default paths
+paths:
+  data_dir: "/var/lib/infini-x"
+  log_dir: "/var/log/infini-x"
+
+# Example: Database connection (for conceptual purposes, sensitive info should be in env vars)
+database:
+  type: "postgresql"
+  host: "localhost"
+  port: 5432
+  name: "infini_x_db"

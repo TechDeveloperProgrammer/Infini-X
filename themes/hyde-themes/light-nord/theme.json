@@ -1,0 +1,19 @@
+
+{
+  "name": "Light Nord",
+  "author": "Infini-X Team",
+  "version": "1.0.0",
+  "description": "A light theme inspired by Nord for Infini-X components.",
+  "components": {
+    "hyprland": {
+      "config_file": "hyprland/colors.conf"
+    },
+    "waybar": {
+      "style_file": "waybar/style.css"
+    },
+    "gtk": {
+      "gtk3_css": "gtk/gtk.css",
+      "gtk4_css": "gtk/gtk.css"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+site_name: Infini-X Documentation
+
+theme:
+  name: material
+  custom_dir: overrides # For custom CSS/JS or templates
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - content.code.select
+    - content.tooltips
+    - header.autohide
+    - navigation.expand
+    - navigation.indexes
+    - navigation.path
+    - navigation.prune
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+
+nav:
+  - Home: index.md
+  - Getting Started: getting_started.md
+  - Core Concepts:
+    - Architecture: core_concepts/architecture.md
+    - Monorepo Structure: core_concepts/monorepo_structure.md
+    - Development Workflow: core_concepts/development_workflow.md
+  - Dotfiles: dotfiles.md
+  - ArchISO: archiso.md
+  - Android GSI: android_gsi.md
+  - Offline AI:
+    - Overview: offline_ai/index.md
+    - Whisper: offline_ai/whisper.md
+    - Piper: offline_ai/piper.md
+    - RVC: offline_ai/rvc.md
+    - So-VITS: offline_ai/so_vits.md
+  - Containers:
+    - Overview: containers/index.md
+    - Docker Rootless: containers/docker_rootless.md
+    - Podman: containers/podman.md
+    - WayDroid: containers/waydroid.md
+    - LXC: containers/lxc.md
+  - Platforms:
+    - Overview: platforms/index.md
+    - x86_64: platforms/x86_64.md
+    - ARM64: platforms/arm64.md
+    - Cloud: platforms/cloud.md
+    - Edge: platforms/edge.md
+  - Web Interface: web_interface.md
+  - CLI Tools: cli_tools.md
+  - Theming: theming.md
+  - Contributing: contributing.md
+  - License: license.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tasklist: {M-x: [ ]}
+
+plugins:
+  - search
+  - awesome-pages # For automatic page generation based on directory structure
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Infini-X/Infini-X
+
+# Custom CSS/JS (if needed)
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js

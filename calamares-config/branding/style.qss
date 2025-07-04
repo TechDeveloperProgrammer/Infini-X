@@ -1,0 +1,84 @@
+/* Calamares style.qss for Infini-X */
+
+/* General styling */
+QWidget {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 14px;
+    color: #cdd6f4; /* Catppuccin Frappe Text */
+    background-color: #1e1e2e; /* Catppuccin Frappe Base */
+}
+
+/* Headers */
+QLabel#header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #89b4fa; /* Catppuccin Frappe Blue */
+}
+
+/* Buttons */
+QPushButton {
+    background-color: #89b4fa; /* Catppuccin Frappe Blue */
+    color: #1e1e2e; /* Catppuccin Frappe Base */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+QPushButton:hover {
+    background-color: #74c7ec; /* Slightly lighter blue */
+}
+
+QPushButton:disabled {
+    background-color: #45475a; /* Catppuccin Frappe Surface0 */
+    color: #6c7086; /* Catppuccin Frappe Overlay0 */
+}
+
+/* Text input fields */
+QLineEdit, QTextEdit {
+    background-color: #313244; /* Catppuccin Frappe Surface1 */
+    border: 1px solid #45475a; /* Catppuccin Frappe Surface0 */
+    border-radius: 3px;
+    padding: 5px;
+    color: #cdd6f4;
+}
+
+/* Checkboxes and Radio buttons */
+QCheckBox::indicator, QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #89b4fa;
+    background-color: #313244;
+}
+
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background-color: #89b4fa;
+}
+
+/* Progress bar */
+QProgressBar {
+    border: 1px solid #45475a;
+    border-radius: 5px;
+    text-align: center;
+    color: #cdd6f4;
+}
+
+QProgressBar::chunk {
+    background-color: #a6e3a1; /* Catppuccin Frappe Green */
+    border-radius: 5px;
+}
+
+/* Sidebar */
+QListView#sidebar {
+    background-color: #181825; /* Catppuccin Frappe Mantle */
+    border: none;
+}
+
+QListView#sidebar::item {
+    padding: 10px;
+    color: #cdd6f4;
+}
+
+QListView#sidebar::item:selected {
+    background-color: #45475a; /* Catppuccin Frappe Surface0 */
+    color: #89b4fa;
+}

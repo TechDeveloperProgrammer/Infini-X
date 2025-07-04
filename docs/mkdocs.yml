@@ -1,0 +1,34 @@
+site_name: Infini-X OS Documentation
+site_url: https://docs.infini-x.org
+
+nav:
+  - Home: index.md
+  - Install: Install.md
+  - Build ISO: Build-ISO.md
+  - Build GSI: Build-GSI.md
+  - Assistant: Assistant.md
+  - Modules: Modules.md
+  - Roadmap: Roadmap.md
+
+theme:
+  name: material
+  palette:
+    primary: "indigo"
+    accent: "indigo"
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+plugins:
+  - search

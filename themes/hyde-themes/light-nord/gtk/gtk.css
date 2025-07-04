@@ -1,0 +1,25 @@
+
+/* GTK CSS for Light Nord */
+
+@define-color base #eceff4;
+@define-color surface0 #e5e9f0;
+@define-color text #2e3440;
+@define-color blue #88c0d0;
+
+.background {
+    background-color: @base;
+}
+
+.label {
+    color: @text;
+}
+
+.button {
+    background-color: @blue;
+    color: @text;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: darken(@blue, 10%);
+}

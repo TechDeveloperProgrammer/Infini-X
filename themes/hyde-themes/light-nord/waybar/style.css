@@ -1,0 +1,42 @@
+
+/* Waybar style for Light Nord */
+
+@define-color background #eceff4;
+@define-color foreground #2e3440;
+@define-color blue #88c0d0;
+@define-color green #a3be8c;
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: @background;
+    color: @foreground;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: @foreground;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active {
+    color: @blue;
+    border-bottom: 2px solid @blue;
+}
+
+#clock, #pulseaudio, #network, #battery, #cpu, #memory, #tray {
+    padding: 0 10px;
+    background-color: @surface0;
+    margin: 0 5px;
+    border-radius: 8px;
+}
+
+#pulseaudio.muted {
+    color: @red;
+}

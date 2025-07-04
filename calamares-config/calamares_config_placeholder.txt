@@ -1,0 +1,8 @@
+
+# Placeholder for Calamares configuration
+# This directory will contain the Calamares installer configuration files.
+# It should include branding, modules, and partitioning schemes.
+
+# Example: branding/branding.desc
+# Example: settings.conf
+# Example: modules/partition.conf

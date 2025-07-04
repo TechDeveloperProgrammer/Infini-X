@@ -1,0 +1,59 @@
+name: ArchISO Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'ISO Version (e.g., 0.1.0)'
+        required: true
+        type: string
+      release_tag:
+        description: 'Git Release Tag (e.g., v0.1.0-iso)'
+        required: true
+        type: string
+
+jobs:
+  build-iso:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # To upload release assets
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Archiso dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y archiso git rsync squashfs-tools
+
+      - name: Build ArchISO
+        # This action wraps mkarchiso and simplifies the process
+        uses: coderadu/actions-mkarchiso@master
+        with:
+          iso_name: Infini-X-${{ github.event.inputs.version }}
+          iso_profile: build-iso/profile
+          output_dir: build-iso/output
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.inputs.release_tag }}
+          release_name: Infini-X ISO ${{ github.event.inputs.version }}
+          draft: false
+          prerelease: false
+
+      - name: Upload ISO to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: build-iso/output/Infini-X-${{ github.event.inputs.version }}-x86_64.iso # Adjust filename if mkarchiso output differs
+          asset_name: Infini-X-${{ github.event.inputs.version }}-x86_64.iso
+          asset_content_type: application/octet-stream

@@ -1,0 +1,3 @@
+
+# Placeholder for HyDE-Project/HyDE related configurations
+# This could include hyde-cli configurations, themes, etc.

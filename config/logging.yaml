@@ -1,0 +1,30 @@
+
+# logging.yaml - Logging configuration for Infini-X applications
+
+version: 1
+formatters:
+  simple:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  detailed:
+    format: '%(asctime)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: simple
+    stream: ext://sys.stdout
+  file:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: /var/log/infini-x/app.log
+    maxBytes: 10485760 # 10 MB
+    backupCount: 5
+loggers:
+  infini_x:
+    level: DEBUG
+    handlers: [console, file]
+    propagate: no
+root:
+  level: INFO
+  handlers: [console]

@@ -1,0 +1,8 @@
+/* Default Waybar style for Infini-X OS */
+
+/* This file defines the default aesthetic settings for Waybar.
+   It is sourced by waybar/config and can be switched using infini-theme-switcher. */
+
+@import "../../dotfiles/waybar/style.css";
+
+/* Override or add theme-specific styles here */

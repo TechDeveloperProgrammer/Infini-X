@@ -1,0 +1,30 @@
+
+{
+  "name": "Infini-X Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/go:1.24",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.10"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.go",
+        "ms-python.python",
+        "esbenp.prettier-vscode",
+        "redhat.vscode-yaml",
+        "streetsidesoftware.code-spell-checker",
+        "github.vscode-github-actions"
+      ]
+    }
+  },
+  "postCreateCommand": "go work tidy && pip install -r assistant/requirements.txt && npm install --prefix web",
+  "forwardPorts": [3000]
+}

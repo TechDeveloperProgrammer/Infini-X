@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# infini-theme-switcher - Script to switch themes for Hyprland and Waybar
+
+THEMES_DIR="${HOME}/.config/Infini-X/themes"
+
+if [ -z "$1" ]; then
+    echo "Usage: infini-theme-switcher <theme_name>"
+    echo "Available themes:"
+    ls -1 "${THEMES_DIR}"
+    exit 1
+fi
+
+THEME_NAME="$1"
+THEME_PATH="${THEMES_DIR}/${THEME_NAME}"
+
+if [ ! -d "${THEME_PATH}" ]; then
+    echo "Error: Theme '${THEME_NAME}' not found at '${THEME_PATH}'."
+    exit 1
+fi
+
+echo "Switching to theme: ${THEME_NAME}"
+
+# Apply Hyprland theme
+ln -sf "${THEME_PATH}/hyprland.conf" "${HOME}/.config/hypr/themes.conf"
+
+# Apply Waybar theme
+ln -sf "${THEME_PATH}/waybar.css" "${HOME}/.config/waybar/style.css"
+
+# Restart Hyprland and Waybar to apply changes (conceptual)
+# hyprctl reload
+# killall waybar && waybar &
+
+echo "Theme switched successfully. You may need to restart Hyprland/Waybar for full effect."

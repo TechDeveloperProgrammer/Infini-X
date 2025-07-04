@@ -1,0 +1,27 @@
+# Rofi configuration for Infini-X OS
+
+# This file contains the main configuration for the Rofi application launcher.
+# It is inspired by end-4/dots-hyprland and HyDE-Project/HyDE.
+
+configuration {
+    modi: "drun,run,window,ssh";
+    font: "FiraCode Nerd Font 10";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "Apps";
+    display-run: "Run";
+    display-window: "Windows";
+    display-ssh: "SSH";
+    drun-display-format: "{name}";
+    window-format: "{w} {c} {t}";
+    terminal: "kitty";
+    ssh-client: "ssh";
+    case-sensitive: false;
+    cycle: true;
+    hide-scrollbar: true;
+    auto-select: false;
+    parse-hosts: false;
+    combi-modi: "window,drun";
+}
+
+@theme "~/.config/rofi/themes/rose-pine.rasi"

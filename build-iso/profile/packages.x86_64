@@ -1,0 +1,68 @@
+
+# List of packages for Infini-X ArchISO (x86_64)
+
+# Base system
+base
+linux
+linux-firmware
+
+# Bootloader
+grub
+efi-stub
+
+# Networking
+networkmanager
+wpa_supplicant
+dhcpcd
+
+# Display Server (Wayland)
+wayland
+hyprland # Our chosen Wayland compositor
+mesa
+xorg-xwayland
+
+# Graphics drivers (example for Intel/AMD)
+vulkan-intel
+vulkan-radeon
+
+# Utilities
+terminus-font
+reflector
+htop
+neofetch
+
+# Dotfiles dependencies (from dotfiles/deps.txt)
+waybar
+wofi
+kitty
+thunar
+pavucontrol
+grim
+slurp
+wl-clipboard
+pipewire
+wireplumber
+dunst
+udiskie
+nm-applet
+blueman-applet
+xdg-user-dirs
+light
+
+# Calamares and its dependencies
+calamares
+qt5-base
+qt5-declarative
+qt5-graphicaleffects
+qt5-quickcontrols
+qt5-quickcontrols2
+qt5-svg
+polkit-qt5
+python-pyqt5
+python-yaml
+
+# Other useful tools
+git
+curl
+wget
+rsync

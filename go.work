@@ -1,0 +1,7 @@
+go 1.24.4
+
+use (
+	./core
+	./assistant
+	# Add other Go modules here as they are created
+)

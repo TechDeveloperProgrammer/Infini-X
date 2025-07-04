@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive # Checkout submodules if any
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.24.4'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Python dependencies
+        run: pip install -r assistant/requirements.txt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Install Node.js dependencies (web)
+        run: npm install --prefix web
+
+      - name: Go Mod Tidy (ensure dependencies are correct)
+        run: go work tidy
+
+      - name: Run Go Format
+        run: make fmt
+
+      - name: Run Go Lint
+        run: make lint
+
+      - name: Run Go Tests
+        run: make test
+
+      - name: Build Go Modules
+        run: make build
+
+      - name: Build Web Application
+        run: npm run build --prefix web
+
+      - name: Run Python Tests (conceptual)
+        run: echo "Running conceptual Python tests..."
+        # Add actual Python test command here, e.g., pytest assistant/
+
+      - name: Run Shell Script Linting (conceptual)
+        run: echo "Running conceptual shell script linting..."
+        # Add shell script linter here, e.g., shellcheck scripts/*.sh
+
+      - name: Verify MkDocs Documentation Build
+        run: make docs
+
+      - name: Upload Web Build Artifact (optional)
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-build
+          path: web/build

@@ -1,0 +1,64 @@
+name: GSI ROM Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'GSI ROM Version (e.g., 0.1.0)'
+        required: true
+        type: string
+      release_tag:
+        description: 'Git Release Tag (e.g., v0.1.0-gsi)'
+        required: true
+        type: string
+
+jobs:
+  build-gsi:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # To upload release assets
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up environment and install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y debootstrap e2fsprogs lzip rsync android-sdk-platform-tools-core
+          # Install img2simg if not part of platform-tools-core or needs specific version
+          # For example, if you have a precompiled binary:
+          # sudo cp /path/to/img2simg /usr/local/bin/
+
+      - name: Build GSI ROM
+        run: |
+          chmod +x build-rom/make_gsi.sh
+          chmod +x build-rom/convert_to_img.sh
+          # Execute the GSI build scripts
+          # NOTE: The make_gsi.sh script is conceptual and would require actual AOSP build steps.
+          # This workflow assumes those steps are either integrated or the script is a placeholder.
+          ./build-rom/make_gsi.sh
+          ./build-rom/convert_to_img.sh
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.inputs.release_tag }}
+          release_name: Infini-X GSI ROM ${{ github.event.inputs.version }}
+          draft: false
+          prerelease: false
+
+      - name: Upload GSI ROM to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: build-rom/infini-x-gsi-x86_64-${{ github.event.inputs.version }}-userdebug.img # Adjust filename based on convert_to_img.sh output and config
+          asset_name: infini-x-gsi-x86_64-${{ github.event.inputs.version }}-userdebug.img
+          asset_content_type: application/octet-stream

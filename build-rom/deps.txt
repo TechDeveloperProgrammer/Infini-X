@@ -1,0 +1,5 @@
+
+debootstrap
+e2fsprogs
+lzip
+android-gsi-tools # This typically refers to tools like img2simg, simg2img

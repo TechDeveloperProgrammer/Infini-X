@@ -1,0 +1,12 @@
+# Python dependencies for Infini-X offline AI
+
+openai-whisper==20250625 # Specific version for Whisper
+torch>=2.0.0,<3.0.0 # PyTorch for RVC and So-VITS
+audioread==3.0.0 # For audio processing
+numpy==1.26.4
+scipy==1.13.0
+librosa==0.10.1 # Common for audio processing in ML
+ soundfile==0.12.1 # For reading/writing audio files
+
+# Additional dependencies for RVC/So-VITS might be needed based on their specific requirements
+# e.g., fairseq, onnxruntime, transformers

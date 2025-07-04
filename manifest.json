@@ -1,0 +1,22 @@
+{
+  "name": "Infini-X",
+  "version": "0.1.0",
+  "description": "A comprehensive monorepo for Arch Linux, Wayland, Android GSI, containers, and offline AI.",
+  "author": "Infini-X Team",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "web/*",
+    "assistant/*",
+    "core/*"
+  ],
+  "scripts": {
+    "build": "make build",
+    "fmt": "make fmt",
+    "lint": "make lint",
+    "test": "make test",
+    "docs": "make docs",
+    "build-iso": "make build-iso",
+    "build-rom": "make build-rom"
+  }
+}

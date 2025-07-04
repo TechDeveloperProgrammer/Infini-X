@@ -1,0 +1,21 @@
+
+hyprland
+waybar
+wofi
+kitty
+thunar
+pavucontrol
+grim
+slurp
+wl-clipboard
+pipewire
+wireplumber
+dunst
+udiskie
+nm-applet
+blueman-applet
+xdg-user-dirs
+light # or brightnessctl for brightness control
+swww # for wallpaper management
+playerctl # for media controls
+polkit-gnome # for policykit agent

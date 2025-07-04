@@ -1,0 +1,193 @@
+/* Rose Pine theme for Rofi */
+
+configuration {
+    modi: "drun,run,window,ssh";
+    font: "FiraCode Nerd Font 10";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "Apps";
+    display-run: "Run";
+    display-window: "Windows";
+    display-ssh: "SSH";
+    drun-display-format: "{name}";
+    window-format: "{w} {c} {t}";
+    terminal: "kitty";
+    ssh-client: "ssh";
+    case-sensitive: false;
+    cycle: true;
+    hide-scrollbar: true;
+    auto-select: false;
+    parse-hosts: false;
+    combi-modi: "window,drun";
+}
+
+* {
+    rosewater:    #f5e0dc;
+    flamingo:     #f2cdcd;
+    pink:         #f5c2e7;
+    mauve:        #cba6f7;
+    red:          #f38ba8;
+    maroon:       #eba0ac;
+    peach:        #fab387;
+    yellow:       #f9e2af;
+    green:        #a6e3a1;
+    teal:         #94e2d5;
+    sky:          #89dceb;
+    sapphire:     #74c7ec;
+    blue:         #89b4fa;
+    lavender:     #b4befe;
+    text:         #cdd6f4;
+    subtext0:     #a6adc8;
+    subtext1:     #bac2de;
+    overlay0:     #6c7086;
+    overlay1:     #7f849c;
+    overlay2:     #9399b2;
+    surface0:     #313244;
+    surface1:     #45475a;
+    surface2:     #585b70;
+    base:         #1e1e2e;
+    mantle:       #181825;
+    crust:        #11111b;
+
+    background-color:   @base;
+    text-color:         @text;
+
+    border-color:       @surface1;
+    separator-color:    @overlay0;
+
+    selected-normal-background: @mauve;
+    selected-normal-foreground: @base;
+
+    selected-active-background: @blue;
+    selected-active-foreground: @base;
+
+    selected-urgent-background: @red;
+    selected-urgent-foreground: @base;
+
+    active-background:  @surface1;
+    active-foreground:  @blue;
+
+    urgent-background:  @surface1;
+    urgent-foreground:  @red;
+
+    alternate-normal-background: @base;
+    alternate-normal-foreground: @text;
+
+    alternate-active-background: @surface0;
+    alternate-active-foreground: @blue;
+
+    alternate-urgent-background: @surface0;
+    alternate-urgent-foreground: @red;
+}
+
+window {
+    background-color: @background-color;
+    border:           2px;
+    padding:          5;
+    width:            30%;
+}
+
+mainbox {
+    border:  0px;
+    padding: 0px;
+}
+
+message {
+    border:       2px 0px 0px;
+    border-color: @separator-color;
+    padding:      1px;
+}
+
+textbox {
+    highlight:    @selected-normal-foreground;
+    text-color:   @text-color;
+}
+
+listview {
+    fixed-height: 2;
+    border:       2px 0px 0px;
+    border-color: @separator-color;
+    spacing:      2px;
+    scrollbar:    true;
+    padding:      2px 0px 0px;
+}
+
+element {
+    border:  0px;
+    padding: 1px;
+}
+
+element normal.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+
+element normal.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+
+element normal.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+
+element selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+
+element selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+
+element urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+
+element active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+inputbar {
+    children:   [ prompt, textbox-prompt-colon, entry, case-indicator ];
+    background-color: @surface0;
+    text-color: @text;
+    expand:     false;
+    border:     0px 0px 1px 0px;
+    border-color: @separator-color;
+    margin:     5px 0px 0px 0px;
+    padding:    5px;
+}
+
+case-indicator {
+    background-color: @surface0;
+    text-color: @text;
+}
+
+entry {
+    background-color: @surface0;
+    text-color: @text;
+    placeholder: "Search...";
+    placeholder-color: @overlay0;
+}
+
+prompt {
+    background-color: @surface0;
+    text-color: @text;
+}
+
+textbox-prompt-colon {
+    background-color: @surface0;
+    text-color: @text;
+    expand:     false;
+    str:        ":";
+}

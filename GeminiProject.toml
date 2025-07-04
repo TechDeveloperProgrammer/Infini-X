@@ -1,0 +1,5 @@
+# GeminiProject.toml
+# Configuration for Gemini CLI
+[project]
+name = "Infini-X"
+version = "0.1.0"

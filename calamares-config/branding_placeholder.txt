@@ -1,0 +1,3 @@
+
+# Placeholder for Calamares branding
+# This directory will contain branding assets for Calamares, such as images and stylesheets.

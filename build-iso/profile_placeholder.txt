@@ -1,0 +1,3 @@
+
+# Placeholder for ArchISO profile configuration
+# This directory will contain the ArchISO profile, including packages, scripts, and other customizations.

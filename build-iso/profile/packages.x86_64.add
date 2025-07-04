@@ -1,0 +1,43 @@
+
+# List of additional packages for Infini-X ArchISO
+# These packages will be installed during the customize_airootfs.sh phase.
+
+# Desktop Environment / WM related
+hyprland
+waybar
+wofi
+dunst
+swww
+playerctl
+polkit-gnome
+light
+
+# File management
+thunar
+
+# Terminal
+kitty
+
+# Utilities
+pavucontrol
+grim
+slurp
+wl-clipboard
+pipewire
+wireplumber
+udiskie
+nm-applet
+blueman-applet
+xdg-user-dirs
+
+# Fonts
+nearly-free-fonts-ttf # Example, choose your preferred fonts
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+
+# Display Manager
+sddm # Or lightdm, gdm, etc.
+
+# Other tools
+neovim # Or vim, nano
