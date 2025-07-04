@@ -73,10 +73,10 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.tasklist:
+  - pymdownx.tasklist:{
       custom_checkbox: true
       clickable_checkbox: false
-
+    }
 plugins:
   - search
   - awesome-pages # For automatic page generation based on directory structure
