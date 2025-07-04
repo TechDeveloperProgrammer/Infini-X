@@ -11,7 +11,7 @@
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.0",
-    "react-router-dom": "^6.14.0" # Added for routing
+    "react-router-dom": "^6.14.0"
   },
   "scripts": {
     "start": "react-scripts start",
